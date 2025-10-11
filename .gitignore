@@ -1,0 +1,64 @@
+# -----------------------------
+# C++ / CMake .gitignore
+# -----------------------------
+
+# Build directories
+/build/
+/build-debug/
+/build-release/
+/cmake-build-*/
+
+# CMake generated files
+CMakeCache.txt
+CMakeFiles/
+Makefile
+cmake_install.cmake
+install_manifest.txt
+CTestTestfile.cmake
+Testing/
+
+# Compiled object files
+*.o
+*.obj
+*.lo
+*.slo
+
+# Compiled dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Compiled static libraries
+*.a
+*.lib
+
+# Executables
+*.exe
+*.out
+*.app
+
+# Debug / profiling files
+*.dSYM/
+*.gcno
+*.gcda
+*.gcov
+
+# IDE files (optional)
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs and temporary files
+*.log
+*.tmp
+
+# Ninja build files
+.ninja_deps
+.ninja_log
+rules.ninja
+build.ninja
