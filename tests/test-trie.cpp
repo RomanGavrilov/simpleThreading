@@ -5,9 +5,30 @@
 using namespace std;
 using namespace datastructures;
 
-TEST(TrieTests, testinit)
+TEST(TrieTests, InitRoot)
 {
-    vector<Trie::Vertex> trie(1);
+    Trie trie;
 
-    EXPECT_EQ(trie.size(), 1);
+    EXPECT_EQ(trie.Size(), 1);
+}
+
+TEST(TrieTests, AddOneString)
+{
+    Trie trie;
+    trie.Add("abc");
+    EXPECT_TRUE(trie.Contains("abc"));
+    EXPECT_FALSE(trie.Contains("ab"));
+}
+
+TEST(TrieTests, AddMultipleStrings)
+{
+    Trie trie;
+    trie.Add("a");
+    trie.Add("abc");
+    trie.Add("fgeahskdh");
+
+    EXPECT_TRUE(trie.Contains("a"));
+    EXPECT_FALSE(trie.Contains("ab"));
+    EXPECT_TRUE(trie.Contains("abc"));
+    EXPECT_TRUE(trie.Contains("fgeahskdh"));
 }

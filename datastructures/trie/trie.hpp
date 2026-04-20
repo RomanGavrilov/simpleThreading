@@ -2,11 +2,13 @@
 
 #include <algorithm>
 #include <string>
+#include <vector>
 
 namespace datastructures
 {
-    namespace Trie
+    class Trie
     {
+    public:
         struct Vertex
         {
             int next[26];
@@ -18,15 +20,13 @@ namespace datastructures
             }
         };
 
-        inline void Add(const std::string &s) noexcept
-        {
-            if (0 == s.size())
-            {
-                return;
-            }
+        Trie() noexcept;
+        inline size_t Size() const noexcept;
+        void Add(const std::string &s) noexcept;
+        inline int Link(int vertex, const char c) const noexcept;
+        inline bool Contains(const std::string &s) const noexcept;
 
-            // Trie storage and insertion logic will live here once the
-            // container interface is fleshed out.
-        }
-    }
+    private:
+        std::vector<Vertex> mVertices;
+    };
 }
