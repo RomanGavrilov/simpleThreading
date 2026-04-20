@@ -1,5 +1,5 @@
-set(DATASTRUCTURES_SOURCES
-  linked-list.cpp
+set(DATASTRUCTURES_SOURCES 
+  trie/trie.cpp
 )
 
 add_library(SimpleDataStructures STATIC ${DATASTRUCTURES_SOURCES})

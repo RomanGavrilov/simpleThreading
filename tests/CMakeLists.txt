@@ -11,7 +11,7 @@ set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
 FetchContent_MakeAvailable(googletest)
 
 add_executable(simplethreading_tests
-  test-linked-list.cpp
+  test-trie.cpp
 )
 
 target_link_libraries(simplethreading_tests
