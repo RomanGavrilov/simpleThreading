@@ -7,12 +7,12 @@ namespace datastructures
     {
     }
 
-    inline size_t Trie::Size() const noexcept
+    size_t Trie::Size() const noexcept
     {
         return mVertices.size();
     }
 
-    inline int Trie::Link(int vertex, const char c) const noexcept
+    int Trie::Link(int vertex, const char c) const noexcept
     {
         return mVertices[vertex].next[c - 'a'];
     }
@@ -35,7 +35,7 @@ namespace datastructures
         mVertices[v].output = true;
     }
 
-    inline bool Trie::Contains(const std::string &s) const noexcept
+    bool Trie::Contains(const std::string &s) const noexcept
     {
         int v = 0;
         for (char c : s)

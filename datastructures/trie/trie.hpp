@@ -21,10 +21,10 @@ namespace datastructures
         };
 
         Trie() noexcept;
-        inline size_t Size() const noexcept;
+        size_t Size() const noexcept;
         void Add(const std::string &s) noexcept;
-        inline int Link(int vertex, const char c) const noexcept;
-        inline bool Contains(const std::string &s) const noexcept;
+        int Link(int vertex, const char c) const noexcept;
+        bool Contains(const std::string &s) const noexcept;
 
     private:
         std::vector<Vertex> mVertices;
