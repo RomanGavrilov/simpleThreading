@@ -12,6 +12,7 @@ FetchContent_MakeAvailable(googletest)
 
 add_executable(simplethreading_tests
   test-trie.cpp
+  test-n-queens.cpp
 )
 
 target_link_libraries(simplethreading_tests
@@ -19,6 +20,7 @@ target_link_libraries(simplethreading_tests
     GTest::gtest_main
     Simple::DataStructures 
     Simple::Common
+    Simple::Algorithms
 )
 
 include(GoogleTest)

@@ -1,0 +1,56 @@
+{
+  "version": 3,
+  "cmakeMinimumRequired": {
+    "major": 3,
+    "minor": 21,
+    "patch": 0
+  },
+  "configurePresets": [
+    {
+      "name": "vs2022",
+      "displayName": "Visual Studio 2022 (x64)",
+      "description": "Use fresh MSBuild workers to avoid access failures from reused workers across build environments.",
+      "condition": {
+        "type": "equals",
+        "lhs": "${hostSystemName}",
+        "rhs": "Windows"
+      },
+      "generator": "Visual Studio 17 2022",
+      "architecture": "x64",
+      "toolset": "host=x64",
+      "binaryDir": "${sourceDir}/build",
+      "environment": {
+        "MSBUILDDISABLENODEREUSE": "1"
+      }
+    }
+  ],
+  "buildPresets": [
+    {
+      "name": "parallel-base",
+      "hidden": true,
+      "configurePreset": "vs2022",
+      "inheritConfigureEnvironment": true,
+      "jobs": 8
+    },
+    {
+      "name": "debug",
+      "inherits": "parallel-base",
+      "configuration": "Debug"
+    },
+    {
+      "name": "release",
+      "inherits": "parallel-base",
+      "configuration": "Release"
+    },
+    {
+      "name": "relwithdebinfo",
+      "inherits": "parallel-base",
+      "configuration": "RelWithDebInfo"
+    },
+    {
+      "name": "minsizerel",
+      "inherits": "parallel-base",
+      "configuration": "MinSizeRel"
+    }
+  ]
+}

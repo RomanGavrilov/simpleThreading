@@ -11,6 +11,7 @@ option(USE_VENDORED_BOOST "Build and use Boost from libs/boost" ON)
 add_subdirectory(common)
 add_subdirectory(datastructures)
 add_subdirectory(src)
+add_subdirectory(algorithms)
 
 include(CTest)
 if(BUILD_TESTING)
